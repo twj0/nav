@@ -76,7 +76,6 @@
 
     <div
       class="middle dark-bg"
-      [class.noads]="commonService.settings().superImages.length <= 0"
     >
       <div class="search-t dark-border-color">
         <app-search />
@@ -137,11 +136,7 @@
       </div>
     </div>
 
-    <app-side-images
-      [data]="commonService.settings().superImages"
-      class="md:w-[200px] lg:w-[230px] xl:w-[250px]"
-      *ngIf="commonService.settings().superImages.length > 0"
-    />
+    
   </div>
 
   <app-sidebar class="md:hidden" />

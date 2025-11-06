@@ -30,14 +30,7 @@
       align-items: center;
     }
   }
-  ::ng-deep {
-    .sideimg {
-      position: initial !important;
-      padding: 20px 20px 0 20px;
-      background-color: #fff;
-      max-height: initial !important;
-    }
-  }
+  /* 广告相关样式已移除 */
 }
 @media (min-width: 1200px) {
   .super-xjh {
@@ -165,9 +158,6 @@
       flex: 1;
       border-radius: 4px;
       overflow: hidden;
-      &.noads {
-        width: initial;
-      }
       .search-t {
         border-bottom: 1px solid #eee;
         margin-bottom: 12px;
@@ -222,12 +212,6 @@
   }
 
   ::ng-deep {
-    .sideimg {
-      position: sticky;
-      width: 100%;
-      top: var(--stickyTop);
-      max-height: calc(100vh - 110px);
-    }
     .standard {
       margin: 0 0 15px 0px;
     }

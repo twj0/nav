@@ -254,11 +254,9 @@ export interface ISettings {
 
   lightCardStyle: ICardType
   lightOverType: OverType
-  lightImages: ImageProps[]
   lightFooterHTML: string
   lightDocTitle: string
 
-  simThemeImages: ImageProps[]
   simThemeDesc: string
   simThemeHeight: number
   simThemeAutoplay: boolean
@@ -268,7 +266,6 @@ export interface ISettings {
   simFooterHTML: string
   simDocTitle: string
 
-  sideThemeImages: ImageProps[]
   sideThemeHeight: number
   sideThemeAutoplay: boolean
   sideCardStyle: ICardType
@@ -277,7 +274,6 @@ export interface ISettings {
   sideCollapsed: boolean
   sideDocTitle: string
 
-  shortcutThemeImages: ImageProps[]
   shortcutThemeShowWeather: boolean
   shortcutTitle: string
   shortcutDockCount: number
@@ -286,7 +282,6 @@ export interface ISettings {
   superTitle: string
   superOverType: OverType
   superCardStyle: ICardType
-  superImages: ImageProps[]
   superFooterHTML: string
   superDocTitle: string
 

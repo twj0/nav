@@ -11,9 +11,7 @@
     <main
       class="homepage dark-border-color dark-bg w-full xl:w-[1000px] lg:w-[800px]"
       [ngClass]="{
-        '2xl:w-[1200px]':
-          commonService.settings().lightImages.length <= 0 &&
-          !componentMaxWidth,
+        '2xl:w-[1200px]': !componentMaxWidth,
       }"
     >
       <div
@@ -131,11 +129,7 @@
       </section>
     </main>
 
-    <app-side-images
-      class="max-[1280px]:w-[200px] max-[1080px]:hidden"
-      [data]="commonService.settings().lightImages"
-      *ngIf="commonService.settings().lightImages.length > 0"
-    />
+    
   </div>
 
   <app-sidebar class="!h-[auto] md:hidden" />

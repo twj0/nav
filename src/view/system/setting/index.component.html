@@ -392,74 +392,7 @@
         </nz-form-control>
       </nz-form-item>
 
-      <nz-form-item class="sim-ban">
-        <nz-form-label [nzSpan]="4">{{ $t('_sidebarImg') }}</nz-form-label>
-        <nz-form-control [nzSpan]="20">
-          <nz-table
-            #basicTable
-            [nzData]="settings.lightImages"
-            [nzShowPagination]="false"
-          >
-            <thead>
-              <tr>
-                <th class="min-w-[260px]">{{ $t('_backgroundImage') }}</th>
-                <th class="min-w-[300px]">{{ $t('_jumpAddr') }}</th>
-                <th class="min-w-[200px]">{{ $t('_action') }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of settings.lightImages; index as idx">
-                <td class="whitespace-nowrap">
-                  <img [src]="data['src']" *ngIf="data['src']" class="icon" />
-                  <div>
-                    <input
-                      nz-input
-                      type="text"
-                      [value]="data['src']"
-                      class="!w-[80%] !mr-2.5 !mt-2.5"
-                      (change)="onChangeBannerUrl($event, 'lightImages', idx)"
-                    />
-                    <app-upload-image
-                      (onChange)="onBannerChange($event, 'lightImages', idx)"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <textarea
-                    [value]="data['url']"
-                    (change)="onChangeJumpUrl($event, 'lightImages', idx)"
-                    nz-input
-                  ></textarea>
-                </td>
-                <td class="select-none">
-                  <a (click)="handleMoveUp('lightImages', idx)">{{
-                    $t('_moveUp')
-                  }}</a>
-                  <a
-                    class="mx-2"
-                    (click)="handleMoveDown('lightImages', idx)"
-                    >{{ $t('_moveDown') }}</a
-                  >
-                  <a
-                    nz-popconfirm
-                    nzPopconfirmPlacement="rightTop"
-                    nzOkType="danger"
-                    [nzPopconfirmTitle]="$t('_confirmDel')"
-                    nzPopconfirmPlacement="bottom"
-                    (nzOnConfirm)="onDeleteBanner('lightImages', idx)"
-                    class="!text-red-500"
-                  >
-                    {{ $t('_del') }}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </nz-table>
-          <a (click)="onAddBanner('lightImages')" class="mt-2.5 !block">{{
-            $t('_add')
-          }}</a>
-        </nz-form-control>
-      </nz-form-item>
+      
 
       <nz-form-item>
         <nz-form-label [nzSpan]="4">{{ $t('_footHtml') }}</nz-form-label>
@@ -521,75 +454,7 @@
         </nz-form-control>
       </nz-form-item>
 
-      <nz-form-item class="sim-ban">
-        <nz-form-label [nzSpan]="4">{{ $t('_sidebarImg') }}</nz-form-label>
-        <nz-form-control [nzSpan]="20">
-          <nz-table
-            #basicTable
-            [nzData]="settings.superImages"
-            [nzShowPagination]="false"
-          >
-            <thead>
-              <tr>
-                <th class="min-w-[260px]">{{ $t('_backgroundImage') }}</th>
-                <th class="min-w-[300px]">{{ $t('_jumpAddr') }}</th>
-                <th class="min-w-[200px]">{{ $t('_action') }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of settings.superImages; index as idx">
-                <td class="whitespace-nowrap">
-                  <img [src]="data['src']" *ngIf="data['src']" class="icon" />
-
-                  <div>
-                    <input
-                      nz-input
-                      type="text"
-                      [value]="data['src']"
-                      class="!w-[80%] !mr-2.5 !mt-2.5"
-                      (change)="onChangeBannerUrl($event, 'superImages', idx)"
-                    />
-                    <app-upload-image
-                      (onChange)="onBannerChange($event, 'superImages', idx)"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <textarea
-                    [value]="data['url']"
-                    (change)="onChangeJumpUrl($event, 'superImages', idx)"
-                    nz-input
-                  ></textarea>
-                </td>
-                <td class="select-none">
-                  <a (click)="handleMoveUp('superImages', idx)">{{
-                    $t('_moveUp')
-                  }}</a>
-                  <a
-                    class="mx-2"
-                    (click)="handleMoveDown('superImages', idx)"
-                    >{{ $t('_moveDown') }}</a
-                  >
-                  <a
-                    nz-popconfirm
-                    nzPopconfirmPlacement="rightTop"
-                    nzOkType="danger"
-                    [nzPopconfirmTitle]="$t('_confirmDel')"
-                    nzPopconfirmPlacement="bottom"
-                    (nzOnConfirm)="onDeleteBanner('superImages', idx)"
-                    class="!text-red-500"
-                  >
-                    {{ $t('_del') }}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </nz-table>
-          <a (click)="onAddBanner('superImages')" class="mt-2.5 !block">{{
-            $t('_add')
-          }}</a>
-        </nz-form-control>
-      </nz-form-item>
+      
 
       <nz-form-item>
         <nz-form-label [nzSpan]="4">{{ $t('_footHtml') }}</nz-form-label>
@@ -647,76 +512,7 @@
         </nz-form-control>
       </nz-form-item>
 
-      <nz-form-item class="sim-ban">
-        <nz-form-label [nzSpan]="4">Banner</nz-form-label>
-        <nz-form-control [nzSpan]="20">
-          <nz-table
-            #basicTable
-            [nzData]="settings.simThemeImages"
-            [nzShowPagination]="false"
-          >
-            <thead>
-              <tr>
-                <th class="min-w-[260px]">{{ $t('_backgroundImage') }}</th>
-                <th class="min-w-[300px]">{{ $t('_jumpAddr') }}</th>
-                <th class="min-w-[200px]">{{ $t('_action') }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of settings.simThemeImages; index as idx">
-                <td class="whitespace-nowrap">
-                  <img [src]="data['src']" *ngIf="data['src']" class="icon" />
-                  <div>
-                    <input
-                      nz-input
-                      type="text"
-                      [value]="data['src']"
-                      class="!w-[80%] !mr-2.5 !mt-2.5"
-                      (change)="
-                        onChangeBannerUrl($event, 'simThemeImages', idx)
-                      "
-                    />
-                    <app-upload-image
-                      (onChange)="onBannerChange($event, 'simThemeImages', idx)"
-                    />
-                  </div>
-                </td>
-                <td>
-                  <textarea
-                    [value]="data['url']"
-                    (change)="onChangeJumpUrl($event, 'simThemeImages', idx)"
-                    nz-input
-                  ></textarea>
-                </td>
-                <td class="select-none">
-                  <a (click)="handleMoveUp('simThemeImages', idx)">{{
-                    $t('_moveUp')
-                  }}</a>
-                  <a
-                    class="mx-2"
-                    (click)="handleMoveDown('simThemeImages', idx)"
-                    >{{ $t('_moveDown') }}</a
-                  >
-                  <a
-                    nz-popconfirm
-                    nzPopconfirmPlacement="rightTop"
-                    nzOkType="danger"
-                    [nzPopconfirmTitle]="$t('_confirmDel')"
-                    nzPopconfirmPlacement="bottom"
-                    (nzOnConfirm)="onDeleteBanner('simThemeImages', idx)"
-                    class="!text-red-500"
-                  >
-                    {{ $t('_del') }}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </nz-table>
-          <a (click)="onAddBanner('simThemeImages')" class="mt-2.5 !block">{{
-            $t('_add')
-          }}</a>
-        </nz-form-control>
-      </nz-form-item>
+      
 
       <nz-form-item>
         <nz-form-label [nzSpan]="4">{{ $t('_autoPlay') }}</nz-form-label>
@@ -831,78 +627,7 @@
         </nz-form-control>
       </nz-form-item>
 
-      <nz-form-item class="sim-ban">
-        <nz-form-label [nzSpan]="4">Banner</nz-form-label>
-        <nz-form-control [nzSpan]="20">
-          <nz-table
-            #basicTable
-            [nzData]="settings.sideThemeImages"
-            [nzShowPagination]="false"
-          >
-            <thead>
-              <tr>
-                <th class="min-w-[260px]">{{ $t('_backgroundImage') }}</th>
-                <th class="min-w-[300px]">{{ $t('_jumpAddr') }}</th>
-                <th class="min-w-[200px]">{{ $t('_action') }}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of settings.sideThemeImages; index as idx">
-                <td class="whitespace-nowrap">
-                  <img [src]="data['src']" *ngIf="data['src']" class="icon" />
-                  <div>
-                    <input
-                      nz-input
-                      type="text"
-                      [value]="data['src']"
-                      class="!w-[80%] !mr-2.5 !mt-2.5"
-                      (change)="
-                        onChangeBannerUrl($event, 'sideThemeImages', idx)
-                      "
-                    />
-                    <app-upload-image
-                      (onChange)="
-                        onBannerChange($event, 'sideThemeImages', idx)
-                      "
-                    />
-                  </div>
-                </td>
-                <td>
-                  <textarea
-                    [value]="data['url']"
-                    (change)="onChangeJumpUrl($event, 'sideThemeImages', idx)"
-                    nz-input
-                  ></textarea>
-                </td>
-                <td class="select-none">
-                  <a (click)="handleMoveUp('sideThemeImages', idx)">{{
-                    $t('_moveUp')
-                  }}</a>
-                  <a
-                    class="mx-2"
-                    (click)="handleMoveDown('sideThemeImages', idx)"
-                    >{{ $t('_moveDown') }}</a
-                  >
-                  <a
-                    nz-popconfirm
-                    nzPopconfirmPlacement="rightTop"
-                    nzOkType="danger"
-                    [nzPopconfirmTitle]="$t('_confirmDel')"
-                    nzPopconfirmPlacement="bottom"
-                    (nzOnConfirm)="onDeleteBanner('sideThemeImages', idx)"
-                    class="!text-red-500"
-                  >
-                    {{ $t('_del') }}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </nz-table>
-          <a (click)="onAddBanner('sideThemeImages')" class="mt-2.5 !block">{{
-            $t('_add')
-          }}</a>
-        </nz-form-control>
-      </nz-form-item>
+      
 
       <nz-form-item>
         <nz-form-label [nzSpan]="4">{{ $t('_autoPlay') }}</nz-form-label>
@@ -974,21 +699,7 @@
         </nz-form-control>
       </nz-form-item>
 
-      <nz-form-item class="sim-ban">
-        <nz-form-label [nzSpan]="4">{{ $t('_backgroundImage') }}</nz-form-label>
-        <nz-form-control [nzSpan]="10">
-          <img [src]="settings.shortcutThemeImages[0]['src']" />
 
-          <input
-            nz-input
-            type="text"
-            [value]="settings.shortcutThemeImages[0]['src']"
-            (change)="onShortcutImgChange($event)"
-            class="max-w-full w-full !mt-2.5"
-          />
-          <app-upload-image (onChange)="onShortcutImgChange($event)" />
-        </nz-form-control>
-      </nz-form-item>
     </nz-tab>
 
     <nz-tab [nzTitle]="'App ' + $t('_theme')">

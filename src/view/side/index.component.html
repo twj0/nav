@@ -7,12 +7,7 @@
   <app-sidebar />
 
   <div class="inner-layout dark-bg">
-    <app-swiper
-      *ngIf="commonService.settings().sideThemeImages.length > 0"
-      [images]="commonService.settings().sideThemeImages"
-      [autoplay]="commonService.settings().sideThemeAutoplay"
-      [height]="commonService.settings().sideThemeHeight"
-    />
+    
     <app-search />
     <component-group />
     <div class="px-2.5">

@@ -180,53 +180,7 @@ export default class SystemSettingComponent {
     this.validateForm.get(key)?.setValue(this.settings[key])
   }
 
-  onBannerChange(data: any, key: string, idx: number) {
-    this.settings[key][idx]['src'] = data.cdn
-  }
-
-  onChangeBannerUrl(e: any, key: string, idx: number) {
-    const value = e.target.value.trim()
-    this.settings[key][idx]['src'] = value
-  }
-
-  onChangeJumpUrl(e: any, key: string, idx: number) {
-    const value = e.target.value.trim()
-    this.settings[key][idx]['url'] = value
-  }
-
-  onDeleteBanner(key: string, idx: number) {
-    this.settings[key].splice(idx, 1)
-  }
-
-  onAddBanner(key: string) {
-    this.settings[key].push({
-      src: '',
-      url: '',
-    })
-  }
-
-  onShortcutImgChange(e: any) {
-    let url = e?.target?.value?.trim() || e.cdn || ''
-    this.settings.shortcutThemeImages[0]['src'] = url
-  }
-
-  handleMoveUp(key: string, idx: number) {
-    if (idx === 0) {
-      return
-    }
-    const data = this.settings[key][idx]
-    this.settings[key][idx] = this.settings[key][idx - 1]
-    this.settings[key][idx - 1] = data
-  }
-
-  handleMoveDown(key: string, idx: number) {
-    if (idx === this.settings[key].length - 1) {
-      return
-    }
-    const data = this.settings[key][idx]
-    this.settings[key][idx] = this.settings[key][idx + 1]
-    this.settings[key][idx + 1] = data
-  }
+  
 
   async handleSpider() {
     await this.handleSubmit()
@@ -268,19 +222,10 @@ export default class SystemSettingComponent {
     }
 
     return new Promise((resolve, reject) => {
-      function filterImage(item: Record<string, any>) {
-        return item['src'] || item['url'][0] === CODE_SYMBOL
-      }
       const formValues = this.validateForm.value
       const values = {
         ...formValues,
         favicon: this.settings.favicon,
-        simThemeImages: this.settings.simThemeImages.filter(filterImage),
-        shortcutThemeImages:
-          this.settings.shortcutThemeImages.filter(filterImage),
-        sideThemeImages: this.settings.sideThemeImages.filter(filterImage),
-        superImages: this.settings.superImages.filter(filterImage),
-        lightImages: this.settings.lightImages.filter(filterImage),
         components: formValues.componentOptions
           .map((id: number) => {
             const data = component().components.find(

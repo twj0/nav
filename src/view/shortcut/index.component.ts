@@ -35,7 +35,7 @@ export default class ShortcutComponent {
   readonly $t = $t
   readonly settings = settings()
   readonly isMobile = isMobile()
-  readonly shortcutThemeImage = settings().shortcutThemeImages?.[0]?.['src']
+  
   isDark: boolean = isDarkFn()
   timer: any = null
   month = 0

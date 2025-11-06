@@ -1,14 +1,11 @@
 <div
   class="shortcut dark-bg-gary2"
   [class.hasComponent]="settings.shortcutThemeShowWeather"
-  [ngStyle]="{ 'background-image': 'url(' + shortcutThemeImage + ')' }"
 >
   <div class="box2">
     <h1
       *ngIf="settings.shortcutTitle"
-      class="title dark-white"
-      [class.text-black]="!shortcutThemeImage"
-      [ngStyle]="{ color: shortcutThemeImage ? '#fff' : '' }"
+      class="title dark-white text-black"
     >
       {{ settings.shortcutTitle }}
     </h1>

@@ -261,16 +261,3 @@ textarea.ant-input {
 }
 
 // loading end
-
-// Google ad
-app-card:has(ins.adsbygoogle[data-ad-status='unfilled']),
-app-html:has(ins.adsbygoogle[data-ad-status='unfilled']),
-.aditem:has(ins.adsbygoogle[data-ad-status='unfilled']) {
-  display: none;
-}
-.adsbygoogle,
-ins[data-ad-client] {
-  display: block;
-  z-index: 1;
-  position: relative;
-}

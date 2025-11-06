@@ -5,17 +5,7 @@
     class="position-center mt-2.5"
   />
 
-  <div
-    class="wallpaper"
-    *ngIf="commonService.settings().simThemeImages.length > 0"
-    [class.bootstrap]="commonService.settings().simThemeHeight < 260"
-  >
-    <app-swiper
-      [images]="commonService.settings().simThemeImages"
-      [autoplay]="commonService.settings().simThemeAutoplay"
-      [height]="commonService.settings().simThemeHeight"
-    />
-  </div>
+  
 
   <div class="bar" *ngIf="commonService.settings().simTitle">
     <h1 class="title text-[36px] lg:text-[40px]">
